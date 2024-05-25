@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <link rel="icon" type="image/x-icon" href="6d99a1b8-1fe7-4456-8f0e-7864a04e60f9.ico">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous" />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"></script>
+    <script>
+      function firstFilter() {
+        hideAllCarousels();
+        document.getElementById("gauguin").style.display = "block";
+        document.getElementById("gauguinLife").className =
+          "carousel-item active";
+      }
+
+      function secondFilter() {
+        hideAllCarousels();
+        document.getElementById("vrubel").style.display = "block";
+        document.getElementById("vrubelLife").className =
+          "carousel-item active";
+      }
+
+      function thirdFilter() {
+        hideAllCarousels();
+        document.getElementById("mualla").style.display = "block";
+        document.getElementById("muallaLife").className =
+          "carousel-item active";
+      }
+
+      function hideAllCarousels() {
+        document.querySelectorAll(".carousel-box").forEach((carousel) => {
+          carousel.style.display = "none";
+        });
+        var artistCarousel = document.getElementById("artistCarousel");
+        artistCarousel.querySelectorAll(".carousel-item").forEach((artist) => {
+          artist.className = "carousel-item";
+        });
+      }
+    </script>
+    <style>
+      .nav a {
+        cursor: pointer;
+      }
+      .container {
+        display: flex;
+      }
+      #lifes {
+        display: block;
+      }
+      #vrubel,
+      #mualla {
+        margin-top: 60px;
+      }
+      #artistCarousel {
+        margin-top: 60px;
+        margin-left: 20%;
+        margin-right: 20%;
+      }
+      #art-box {
+        margin-top: 30px;
+      }
+      #art-box img {
+        cursor: pointer;
+      }
+    </style>
+    <title>Art List</title>
+  </head>
+  <body>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Art Online</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./home.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Arts
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="./arts.html#gauguinCarousel"
+                    >Paul Gauguin</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./arts.html#vrubelCarousel"
+                    >Mikhail Vrubel</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./arts.html#saygiCarousel"
+                    >Fikret Mualla Saygı</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div id="art-box" class="container">
+      <div class="side-navbar col-2">
+        <h4>Artists</h4>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" onclick="firstFilter()">Paul Gauguin</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" onclick="secondFilter()">Mikhail Vrubel</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" onclick="thirdFilter()">Fikret Mualla Saygi</a>
+          </li>
+        </ul>
+        <h4>Genres</h4>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" onclick="thirdFilter()">Expressionism</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" onclick="firstFilter()">Impressionism</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" onclick="secondFilter()">Art Noveau</a>
+          </li>
+        </ul>
+        <h4>Nationalities</h4>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" onclick="firstFilter()">French</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" onclick="secondFilter()">Russian</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" onclick="thirdFilter()">Turkish</a>
+          </li>
+        </ul>
+      </div>
+      <div class="careousel-container col-8">
+        <div id="gauguin" class="carousel-box">
+          <h4>Paul Gauguin Artworks</h4>
+          <div id="gauguinCarousel" class="carousel slide carousel-fade">
+            <div class="carousel-inner">
+              <div class="carousel-item">
+                <img
+                  src="https://uploads5.wikiart.org/images/paul-gauguin/a-day-of-no-gods-1894.jpg"
+                  class="w-100"
+                  data-bs-toggle="popover"
+                  data-bs-placement="right"
+                  title="Mahana no atua"
+                  data-bs-content="In this tropical paradise of the artist’s invention, a deity presides over figures walking and resting on an embankment. Rhythmically arranged in groups of two and three, the figures appear more as symbolic forms than as portraits of individuals. Pools of water in interlocking, abstract zones of acidic color surround the feet of a bather, who is flanked by two prone figures—or perhaps the same person seen from two angles.
+                  Unlike his other Tahitian-inspired landscapes, this painting was produced in Paris shortly after Paul Gauguin’s first trip to the island. Drawn from fantasy and memory, the psychedelic composition is one of the most abstract and avant-garde works of the artist’s career."
+                  alt="mahana" />
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Mahana no atua</h5>
+                  <p>1894</p>
+                </div>
+              </div>
+              <div class="carousel-item active">
+                <img
+                  src="https://uploads2.wikiart.org/images/paul-gauguin/the-vision-after-the-sermon-jacob-wrestling-with-the-angel-1888.jpg"
+                  class="w-100"
+                  data-bs-toggle="popover"
+                  data-bs-placement="right"
+                  title="Vision After the Sermon"
+                  data-bs-content="This painting, which dates from 1888 and was made in Pont-Aven, Brittany, is one of Gauguin's most famous works. The Breton women, dressed in distinctive regional costume, have just listened to a sermon based on a passage from the Bible. Genesis (32:22-32) relates the story of Jacob, who, after fording the river Jabbok with his family, spent a whole night wrestling with a mysterious angel. In a letter the artist wrote to Van Gogh he said 'For me the landscape and the fight only exist in the imagination of the people praying after the sermon.'"
+                  alt="vision-after-the-sermon-jacob-wrestling-with-the-angel-1888" />
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>
+                    Vision after the Sermon (Jacob wrestling with the Angel)
+                  </h5>
+                  <p>1888</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="https://uploads8.wikiart.org/images/paul-gauguin/van-gogh-painting-sunflowers-1888.jpg"
+                  class="w-100"
+                  data-bs-toggle="popover"
+                  data-bs-placement="right"
+                  title="Van Gogh peignant des tournesols"
+                  data-bs-content="Gauguin painted this portrait of Vincent van Gogh in November 1888, during his brief stay in Arles. Van Gogh had repeatedly asked him to come to Provence to help him realize his dream of creating an artists’ colony in Arles – a ‘Studio of the South.’ Almost as soon as Gauguin arrived, however, problems arose, and the friends had many quarrels. Some of the tension between the two artists can be felt in the portrait, painted only a few weeks before their final confrontation. When Vincent first saw it he seems to have remarked that although he recognized it as himself, he felt Gauguin had portrayed him as a madman. However, he later wrote to Theo: 'My face has lit up after all a lot since, but it was indeed me, extremely tired and charged with electricity as I was then.' The scene is depicted from above, with all its essential components cut off by the edge of the canvas: the painter himself, his palette and easel, and the table with the vase of sunflowers. The center is quite empty. Gauguin painted his friend’s likeness on burlap, applying the relatively dry paint in a thin layer. When viewed close up, we can clearly see the rough, grainy structure of the surface."
+                  alt="Portrait of Chaim Soutine" />
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Van Gogh peignant des tournesols</h5>
+                  <p>1888</p>
+                </div>
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#gauguinCarousel"
+              data-bs-slide="prev">
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#gauguinCarousel"
+              data-bs-slide="next">
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+        <div id="vrubel" class="carousel-box">
+          <h4>Mikhail Vrubel Artworks</h4>
+          <div id="vrubelCarousel" class="carousel slide carousel-fade">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="https://uploads3.wikiart.org/images/mikhail-vrubel/seated-demon-1890.jpg"
+                  class="w-100"
+                  data-bs-toggle="popover"
+                  data-bs-placement="right"
+                  title="Seated Demon"
+                  data-bs-content="This artwork was created in 1890."
+                  title="Seated Demon" />
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Seated Demon</h5>
+                  <p>1890</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="https://uploads3.wikiart.org/images/mikhail-vrubel/the-six-winged-seraph-1904.jpg"
+                  class="w-100"
+                  data-bs-toggle="popover"
+                  data-bs-placement="right"
+                  data-bs-content="This artwork was created in 1904."
+                  title="The Six Winged Seraph" />
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>The Six Winged Seraph</h5>
+                  <p>1904</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="https://uploads7.wikiart.org/images/mikhail-vrubel/water-lilies.jpg"
+                  class="w-100"
+                  data-bs-toggle="popover"
+                  data-bs-placement="right"
+                  title="Water Lilies"
+                  data-bs-content="This artwork was created in 1895."
+                  alt="water lillies" />
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Water Lilies</h5>
+                  <p>1895</p>
+                </div>
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#vrubelCarousel"
+              data-bs-slide="prev">
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#vrubelCarousel"
+              data-bs-slide="next">
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+        <div id="mualla" class="carousel-box">
+          <h4>Fikret Mualla Saygı Artworks</h4>
+          <div id="saygiCarousel" class="carousel slide carousel-fade">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="https://uploads6.wikiart.org/images/fikret-mualla-saygi/unknown-title-10.jpg"
+                  class="d-block w-100"
+                  data-bs-toggle="popover"
+                  data-bs-placement="right"
+                  title="Unknown"
+                  data-bs-content="This artwork was created by Fikret Mualla."
+                  alt="Unknown" />
+                <div class="carousel-caption d-none d-md-block">
+                  <h5></h5>
+                  <p></p>
+                </div>
+              </div>
+              <div class="carousel-item active">
+                <img
+                  src="https://uploads5.wikiart.org/images/fikret-mualla-saygi/cannes.jpg"
+                  class="d-block w-100"
+                  data-bs-toggle="popover"
+                  data-bs-placement="right"
+                  title="Unknown"
+                  data-bs-content="This artwork was created by Fikret Mualla."
+                  alt="Unknown" />
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Cannes</h5>
+                  <p></p>
+                </div>
+              </div>
+              <div class="carousel-item active">
+                <img
+                  src="https://uploads6.wikiart.org/images/fikret-mualla-saygi/unknown-title-20.jpg"
+                  class="d-block w-100"
+                  data-bs-toggle="popover"
+                  data-bs-placement="right"
+                  data-bs-content="This artwork was created in 1890."
+                  alt="Baloncu" />
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Baloncu</h5>
+                  <p></p>
+                </div>
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#saygiCarousel"
+              data-bs-slide="prev">
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#saygiCarousel"
+              data-bs-slide="next">
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="artistCarousel" class="carousel slide" data-bs-ride="true">
+      <h2>Artists</h2>
+      <div class="carousel-inner">
+        <div id="gauguinLife" class="carousel-item active">
+          <div class="card mb-3">
+            <div class="card-body text-center">
+              <img
+                src="https://uploads4.wikiart.org/images/paul-gauguin.jpg!Portrait.jpg"
+                class="card-img-top mx-auto d-block"
+                style="width: 200px; height: 250px"
+                alt="Paul Gauguin" />
+              <h5 class="card-title">Paul Gauguin</h5>
+              <h6 class="card-subtitle mb-2 text-muted">1848 - 1903</h6>
+              <p class="card-text">
+                Paul Gauguin was a French Post-Impressionist artist, whose work
+                deeply influenced the French avant-garde and modern artists,
+                such as Pablo Picasso and Henri Matisse. As a descendant of the
+                Peruvian nobility, he spent his early childhood in Lima, Peru.
+                This nomadic upbringing aroused his curiosity for exotic lands
+                and cultures, which would eventually lead him to Tahiti and
+                Martinique. Gauguin discovered art relatively late in life. He
+                was married and working in Paris as a stockbroker when he
+                befriended painter, Camille Pissarro. By 1879 he was Pissarro’s
+                unofficial pupil and patron, and after the stock market crashed
+                in 1882, Gauguin decided to become an artist full-time. His
+                early paintings were mainly Impressionist landscapes influenced
+                by Pissarro and Paul Cezanne, who he met through Pissarro.
+              </p>
+              <a
+                href="https://www.wikiart.org/en/paul-gauguin"
+                class="card-link"
+                >More about Gauguin</a
+              >
+            </div>
+          </div>
+        </div>
+        <div id="vrubelLife" class="carousel-item">
+          <div class="card mb-3">
+            <div class="card-body text-center">
+              <img
+                src="https://uploads6.wikiart.org/images/mikhail-vrubel.jpg!Portrait.jpg"
+                class="card-img-top mx-auto d-block"
+                style="width: 200px; height: 250px"
+                alt="Mikhail Vrubel" />
+              <h5 class="card-title">Mikhail Vrubel</h5>
+              <h6 class="card-subtitle mb-2 text-muted">1856 - 1910</h6>
+              <p class="card-text">
+                Mikhail Aleksandrovich Vrubel is usually regarded amongst the
+                Russian painters of the Symbolist movement and of Art Nouveau.
+                In reality, he deliberately stood aloof from contemporary art
+                trends, so that the origin of his unusual manner should be
+                sought in Late Byzantine and Early Renaissance painting.
+              </p>
+              <a
+                href="https://www.wikiart.org/en/mikhail-vrubel"
+                class="card-link"
+                >More about Vrubel</a
+              >
+            </div>
+          </div>
+        </div>
+        <div id="muallaLife" class="carousel-item">
+          <div class="card mb-3">
+            <div class="card-body text-center">
+              <img
+                src="https://uploads4.wikiart.org/temp/f2c49204-656a-4051-956b-217cd7081976.jpg"
+                class="card-img-top mx-auto d-block"
+                style="width: 200px; height: 250px"
+                alt="Fikret Mualla Saygi" />
+              <h5 class="card-title">Fikret Mualla Saygı</h5>
+              <h6 class="card-subtitle mb-2 text-muted">1904 - 1967</h6>
+              <p class="card-text">
+                FFikret Muallâ Saygı was a 20th-century avant-garde painter of
+                Turkish descent. His work reflects influences from Expressionism
+                and Fauvism, with subject matter focusing on Paris street life,
+                social gatherings such as cafés and circuses.
+              </p>
+              <a
+                href="https://www.wikiart.org/en/fikret-mualla-saygi"
+                class="card-link"
+                >More about Saygi</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        id="carousel-button"
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#artistCarousel"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        id="carousel-button"
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#artistCarousel"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <footer class="text-center py-4">
+      <div class="container">
+        <p class="mb-0">© 2024 Art Online. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      var popoverTriggerList = [].slice.call(
+        document.querySelectorAll('[data-bs-toggle="popover"]'),
+      );
+      var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl);
+      });
+      const popover = new bootstrap.Popover('.popover-dismiss', {
+        trigger: 'focus'
+      });
+    </script>
+  </body>
+</html>
